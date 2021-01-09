@@ -7,5 +7,16 @@ public class ScoreManager : MonoBehaviour
     public Text textScore;
     [Header("分數")]
     public int score;
-  
+    private void OnTriggerEnter(Collider other)
+    {
+       if(other.tag =="棒球")
+        {
+            AddScore();
+        }
+    }
+    private void AddScore()
+    {
+        score += 1;
+        textScore.text = "得分:" + score;
+    }
 }
